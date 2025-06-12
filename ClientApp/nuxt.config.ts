@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { readFileSync } from 'fs'
-import { certFilePath, keyFilePath } from './aspnetcore-https'
+import { certFilePath, keyFilePath } from './aspnetcore-https.cjs'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
