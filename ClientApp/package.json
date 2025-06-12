@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prestart": "node ./aspnetcore-https.js",
+    "prestart": "node ./aspnetcore-https.cjs",
     "build": "nuxt build",
     "start": "nuxt dev",
     "dev": "nuxt dev",
