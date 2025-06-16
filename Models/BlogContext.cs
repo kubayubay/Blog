@@ -15,14 +15,7 @@ public partial class BlogContext : DbContext
     {
     }
 
-    public virtual DbSet<Post> Posts { get; set; }
+    public DbSet<Post> Posts { get; set; }
 
-    public virtual DbSet<User> Users { get; set; }
-
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-    }
-
-    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+    public DbSet<User> Users { get; set; }
 }

@@ -7,7 +7,10 @@ using Microsoft.EntityFrameworkCore;
 namespace Blog.Models;
 
 [Table("User")]
-public partial class User
+public class User
 {
-
+    public int Id { get; set; }
+    public string Name { get; set; } = "";
+    public bool IsActive { get; set; } = true;
+    public DateTime CreatedAt { get; set; }
 }
