@@ -4,7 +4,7 @@
             Blog Posts
         </div>
         <div v-if="posts != undefined">
-            <Post v-for="post in posts" :key="post.id" :post="post" class="mb-4" />
+            <Post v-for="post in posts" :key="post.id" :post="post" class="mb-4" @delete="onDelete" />
         </div>
     </div>
 </template>
@@ -12,10 +12,18 @@
 <script setup lang="ts">
 const posts = ref()
 
-$fetch('/api/v1/Blog/Posts', {
-    server: false,
-    onResponse({ response }) {
-        posts.value = response._data
-    }
-})
+const reloadAllPosts = () => {
+    $fetch('/api/v1/Blog/Posts', {
+        server: false,
+        onResponse({ response }) {
+            posts.value = response._data
+        }
+    })
+}
+
+reloadAllPosts()
+
+const onDelete = () => {
+    reloadAllPosts()
+}
 </script>
